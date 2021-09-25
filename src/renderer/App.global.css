@@ -1,0 +1,93 @@
+/*
+ * @NOTE: Prepend a `~` to css file paths that are in your node_modules
+ *        See https://github.com/webpack-contrib/sass-loader#imports
+ */
+ @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+ *{
+  font-family: 'Raleway', sans-serif;
+ }
+
+ body {
+
+  position: relative;
+  color: white;
+  height: 100vh;
+  background: #131722;
+  font-family: sans-serif;
+  overflow-y: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menuButton {
+  background-color: #323947;
+  padding: 10px;
+  text-align: center;
+  border-radius: 8px;
+  border: none;
+  appearance: none;
+  font-size: 1.3rem;
+  transition: transform ease-in 0.2s;
+  cursor: pointer;
+}
+
+.menuButton:hover {
+  transform: scale(1.05);
+  background-color: #4375EE;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  height: fit-content;
+  width: fit-content;
+  margin: 10px;
+}
+
+a:hover {
+  opacity: 1;
+  text-decoration: none;
+}
+
+.Hello {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+#root{
+  width:100vw;
+  height: 100vh;
+}
+.activeLink{
+  background-color: #4375EE;
+}
+.settingsPane{
+  background-color: #252C37;
+  border-radius: 8px;
+}
+.formPane{
+  font-size: 1.2rem;
+  -webkit-app-region: drag;
+  font-weight: bold;
+
+}
+.formPaneButton{
+  padding: 2px;
+  transition: transform ease-in 0.2s;
+}
+.formPaneButton:hover{
+  background-color: #4375EE;
+  z-index: 99;
+
+}
+.formIconsPane{
+  -webkit-app-region: no-drag;
+}
+
+@import '~tailwindcss';
