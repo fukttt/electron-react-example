@@ -1,15 +1,5 @@
-import React, { useState } from 'react';
-import {
-  MemoryRouter as Router,
-  Switch,
-  Route,
-  useHistory,
-  BrowserRouter,
-  useRouteMatch,
-  Link,
-} from 'react-router-dom';
-import { BookOutline, BuildOutline, AirplaneOutline } from 'react-ionicons';
-import icon from '../../assets/icon.svg';
+import React from 'react';
+import { MemoryRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.global.css';
 
 // Panes
@@ -18,21 +8,6 @@ import FormPane from './comp/FormPane';
 
 // Screens
 import SettingsScreen from './screen/SettingsScreen';
-
-export default function App() {
-  return (
-    <Router>
-      <Switch>
-        <Route path="/settings">
-          <Settings />
-        </Route>
-        <Route path="/">
-          <Home />
-        </Route>
-      </Switch>
-    </Router>
-  );
-}
 
 const Settings = () => {
   return (
@@ -56,7 +31,8 @@ const Settings = () => {
 const Home = () => {
   return (
     <>
-      <FormPane title="Home" /><div className="grid grid-cols-12 gap-4">
+      <FormPane title="Home" />
+      <div className="grid grid-cols-12 gap-4">
         <div className="col-span-1 items-center p-2 flex flex-col">
           <MenuPane page="/" />
         </div>
@@ -66,3 +42,18 @@ const Home = () => {
     </>
   );
 };
+
+export default function App() {
+  return (
+    <Router>
+      <Switch>
+        <Route path="/settings">
+          <Settings />
+        </Route>
+        <Route path="/">
+          <Home />
+        </Route>
+      </Switch>
+    </Router>
+  );
+}
