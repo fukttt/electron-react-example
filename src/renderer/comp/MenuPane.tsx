@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useHistory } from 'react-router-dom';
-import { BookOutline, BuildOutline, AirplaneOutline } from 'react-ionicons';
+import { BookOutline, BuildOutline } from 'react-ionicons';
 import '../App.global.css';
 
 export default function MenuPane(props: { page: string }) {
-  const history = useHistory();
   const { page } = props;
+  const history = useHistory();
   return (
     <>
       <button
@@ -15,16 +15,18 @@ export default function MenuPane(props: { page: string }) {
           history.push('/');
         }}
       >
-        <BookOutline color="#fff" height="32px" width="32px" />
+        <BookOutline color="#fff" height="1em" width="1em" />
       </button>
       <button
         type="button"
-        className={`mb-2 menuButton flex-1 ${page === '/settings' ? 'activeLink' : ''}`}
+        className={`mb-2 menuButton flex-1 ${
+          page === '/settings' ? 'activeLink' : ''
+        }`}
         onClick={() => {
           history.push('/settings');
         }}
       >
-        <BuildOutline color="#fff" height="32px" width="32px" />
+        <BuildOutline color="#fff" height="1em" width="1em" />
       </button>
     </>
   );
