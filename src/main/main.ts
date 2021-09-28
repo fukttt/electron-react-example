@@ -32,7 +32,7 @@ ipcMain.on('ipc-example', async (event, arg) => {
   event.reply('ipc-example', msgTemplate('pong'));
 });
 
-ipcMain.on('form-action', async (event, arg) => {
+ipcMain.on('form-action', async (_event, arg) => {
   switch (arg) {
     case 'minimize':
       mainWindow?.minimize();
