@@ -13,7 +13,8 @@
     "start": "node -r @babel/register ./.erb/scripts/check-port-in-use.js && yarn start:renderer",
     "start:main": "cross-env NODE_ENV=development electron -r ./.erb/scripts/babel-register ./src/main/main.ts",
     "start:renderer": "cross-env NODE_ENV=development webpack serve --config ./.erb/configs/webpack.config.renderer.dev.babel.js",
-    "test": "jest"
+    "test": "jest",
+    "lintfix": "eslint ./src --fix"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
@@ -82,13 +83,13 @@
     ],
     "publish": {
       "provider": "github",
-      "owner": "electron-react-boilerplate",
-      "repo": "electron-react-boilerplate"
+      "owner": "electron-react-example",
+      "repo": "electron-react-example"
     }
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/electron-react-boilerplate/electron-react-boilerplate.git"
+    "url": "git+https://github.com/fukttt/electron-react-example.git"
   },
   "author": {
     "name": "Electron React Boilerplate Maintainers",
