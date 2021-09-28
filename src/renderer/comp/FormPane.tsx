@@ -8,6 +8,8 @@ import {
 
 import '../App.global.css';
 
+const { ipcRenderer } = window.require('electron');
+
 export default function FormPane(props: { title: string }) {
   const { title } = props;
   return (
@@ -20,7 +22,7 @@ export default function FormPane(props: { title: string }) {
             type="button"
             className="formPaneButton"
             onClick={() => {
-              window.electron.ipcRenderer.Minimize();
+              ipcRenderer.send('form-action', 'minimize');
             }}
           >
             <RemoveOutline color="#00000" height="25px" width="25px" />
@@ -32,7 +34,7 @@ export default function FormPane(props: { title: string }) {
               width="25px"
               cssClasses="formPaneButton"
               onClick={() => {
-                window.electron.ipcRenderer.Maximize();
+                ipcRenderer.send('form-action', 'maximize');
               }}
             />
           </button>
@@ -43,7 +45,7 @@ export default function FormPane(props: { title: string }) {
               width="25px"
               cssClasses="formPaneButton"
               onClick={() => {
-                window.electron.ipcRenderer.Close();
+                ipcRenderer.send('form-action', 'close');
               }}
             />
           </button>
